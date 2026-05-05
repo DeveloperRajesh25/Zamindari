@@ -1,0 +1,56 @@
+export const site = {
+  name: "Zamindari Restaurant",
+  tagline: "Where Heritage Meets the Table",
+  description:
+    "Heritage Andhra cuisine served inside a restored colonial bungalow in Maharani Peta, Vizag. Slow-cooked recipes, vintage charm, generous portions. Reserve a table.",
+  url: "https://zamindari.example.com",
+  phone: "+91 99515 22111",
+  phoneHref: "tel:+919951522111",
+  whatsappHref: "https://wa.me/919951522111",
+  instagram: "@zamindariallday",
+  instagramHref: "https://instagram.com/zamindariallday",
+  email: "hello@zamindari.com",
+  address: {
+    street: "Port Officers Quarters, Near Nowroji Road",
+    locality: "Maharani Peta",
+    city: "Visakhapatnam",
+    region: "Andhra Pradesh",
+    postal: "530002",
+    country: "IN",
+  },
+  fullAddress:
+    "Port Officers Quarters, Near Nowroji Road, Maharani Peta, Visakhapatnam, Andhra Pradesh 530002",
+  hours: [
+    { day: "Monday", time: "12:00 PM – 11:30 PM" },
+    { day: "Tuesday", time: "12:00 PM – 11:30 PM" },
+    { day: "Wednesday", time: "12:00 PM – 11:30 PM" },
+    { day: "Thursday", time: "12:00 PM – 11:30 PM" },
+    { day: "Friday", time: "12:00 PM – 11:30 PM" },
+    { day: "Saturday", time: "12:00 PM – 11:30 PM" },
+    { day: "Sunday", time: "12:00 PM – 11:30 PM" },
+  ],
+  rating: { value: 4.4, count: 3591 },
+  priceRange: "₹600–800 for two",
+  geo: { lat: 17.7134762, lng: 83.3140423 },
+  cuisines: ["Andhra", "South Indian", "Telangana"],
+  amenities: [
+    "Free parking",
+    "Outdoor seating",
+    "Private dining room",
+    "All-you-can-eat option",
+    "Wheelchair accessible",
+    "Card + UPI payments",
+    "Reservations accepted",
+    "No-contact delivery",
+    "Kerbside pickup",
+    "Good for kids",
+  ],
+} as const;
+
+export const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Menu", href: "/menu" },
+  { label: "Our Story", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
+];
