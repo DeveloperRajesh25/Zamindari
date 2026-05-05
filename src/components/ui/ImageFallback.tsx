@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { resolveImage } from "@/data/images";
 
 type Props = {
   src: string;
@@ -37,6 +38,7 @@ export function ImageFallback({
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
 
+  const resolvedSrc = resolveImage(src);
   const wrapperStyle = fill ? undefined : { width, height };
 
   return (
@@ -62,7 +64,7 @@ export function ImageFallback({
       {!errored ? (
         fill ? (
           <Image
-            src={src}
+            src={resolvedSrc}
             alt=""
             fill
             sizes={sizes}
@@ -77,7 +79,7 @@ export function ImageFallback({
           />
         ) : (
           <Image
-            src={src}
+            src={resolvedSrc}
             alt=""
             width={width ?? 1200}
             height={height ?? 800}
