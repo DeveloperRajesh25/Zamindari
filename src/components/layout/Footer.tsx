@@ -6,7 +6,7 @@ import { Divider } from "@/components/ui/Divider";
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-cream/80">
+    <footer className="bg-charcoal text-cream/90">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -16,7 +16,7 @@ export function Footer() {
               </span>
               <span className="font-display text-2xl">Zamindari</span>
             </Link>
-            <p className="mt-5 font-accent italic text-cream/70 text-lg leading-relaxed max-w-sm">
+            <p className="mt-5 font-accent italic text-cream/85 text-lg leading-relaxed max-w-sm">
               Where Heritage Meets the Table.
               <br />
               Authentic Andhra cuisine, served inside a colonial bungalow.
@@ -37,7 +37,7 @@ export function Footer() {
             <ul className="space-y-3">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-cream/80 hover:text-gold transition-colors">
+                  <Link href={l.href} className="text-cream/90 hover:text-gold transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/reservations"
-                  className="text-cream/80 hover:text-gold transition-colors"
+                  className="text-cream/90 hover:text-gold transition-colors"
                 >
                   Reservations
                 </Link>
@@ -55,7 +55,7 @@ export function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-eyebrow text-gold mb-5">Visit Us</h3>
-            <address className="not-italic text-cream/80 leading-relaxed">
+            <address className="not-italic text-cream/90 leading-relaxed">
               {site.address.street}
               <br />
               {site.address.locality}
@@ -68,7 +68,7 @@ export function Footer() {
             >
               <Phone size={14} /> {site.phone}
             </a>
-            <div className="mt-5 text-sm text-cream/70">
+            <div className="mt-5 text-sm text-cream/85">
               <div className="text-eyebrow text-gold mb-2">Hours</div>
               <div>All days · 12:00 PM – 11:30 PM</div>
             </div>
@@ -96,7 +96,7 @@ export function Footer() {
         </div>
 
         <Divider tone="gold" className="mt-16 mb-6 opacity-40" />
-        <p className="text-sm text-cream/60 font-body">
+        <p className="text-sm text-cream/70 font-body">
           © {new Date().getFullYear()} Zamindari Restaurant · Crafted with care in
           Visakhapatnam
         </p>

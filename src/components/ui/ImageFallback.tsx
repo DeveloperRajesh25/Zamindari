@@ -41,12 +41,21 @@ export function ImageFallback({
   const resolvedSrc = resolveImage(src);
   const wrapperStyle = fill ? undefined : { width, height };
 
+  // If the caller already passed a positioning utility, don't add `relative`.
+  // Tailwind generates `.relative` after `.absolute` in the stylesheet, so
+  // hardcoding `relative` here would override the caller's `absolute` and
+  // collapse the wrapper to its text-content height.
+  const hasPosition = /(?:^|\s)(?:absolute|fixed|relative|sticky)(?:\s|$)/.test(
+    className ?? "",
+  );
+
   return (
     <div
       role="img"
       aria-label={alt}
       className={cn(
-        "relative flex items-center justify-center overflow-hidden",
+        !hasPosition && "relative",
+        "flex items-center justify-center overflow-hidden",
         "bg-[radial-gradient(ellipse_at_30%_20%,#E8D9B0_0%,#C9A961_45%,#5A1A1A_100%)]",
         className,
       )}
