@@ -18,29 +18,34 @@ export function Hero() {
 
   return (
     <section className="relative isolate flex min-h-[92vh] items-end overflow-hidden bg-ink">
-      <div className="absolute inset-0 -z-10">
-        <ImageFallback
-          src="/images/hero/bungalow-entrance.jpg"
-          alt="Bronze statue figures flanking the wooden entrance doors of Zamindari Restaurant at dusk, with warm lights spilling from a colonial bungalow"
-          fill
-          priority
-          sizes="100vw"
-          imgClassName={
-            reduce
-              ? "object-cover opacity-10"
-              : "object-cover opacity-10 animate-kenburns"
-          }
-          className="absolute inset-0"
-        />
-        {/* Left-to-right black gradient: heavy on the left, fading toward the right */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"
-          aria-hidden
-        />
-      </div>
+      {/*
+        Background stack — explicit z-indexes so the dim layer is guaranteed
+        above the image (which has its own z-20 inside ImageFallback).
+        Applying `opacity` on the ImageFallback wrapper also creates a
+        stacking context that contains the inner z-20.
+      */}
+      <ImageFallback
+        src="/images/hero/bungalow-entrance.jpg"
+        alt="Bronze statue figures flanking the wooden entrance doors of Zamindari Restaurant at dusk, with warm lights spilling from a colonial bungalow"
+        fill
+        priority
+        sizes="100vw"
+        imgClassName={
+          reduce ? "object-cover" : "object-cover animate-kenburns"
+        }
+        className="absolute inset-0 z-0 opacity-30"
+      />
+      <div
+        className="absolute inset-0 z-[1] bg-gradient-to-r from-black via-black/70 to-black/30"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-transparent to-black/50"
+        aria-hidden
+      />
 
       {/* Decorative right rail — editorial meta */}
-      <div className="pointer-events-none absolute right-6 top-1/2 hidden -translate-y-1/2 lg:flex flex-col items-center gap-4">
+      <div className="pointer-events-none absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 lg:flex flex-col items-center gap-4">
         <span className="h-16 w-px bg-gold/40" />
         <span className="rotate-90 whitespace-nowrap text-eyebrow text-gold/70 tracking-[0.32em]">
           Estd · Vizag
@@ -49,14 +54,14 @@ export function Hero() {
       </div>
 
       {/* Top label */}
-      <div className="pointer-events-none absolute left-0 right-0 top-28 mx-auto max-w-7xl px-6 lg:px-10 hidden lg:flex items-center gap-4">
+      <div className="pointer-events-none absolute left-0 right-0 top-28 z-10 mx-auto max-w-7xl px-6 lg:px-10 hidden lg:flex items-center gap-4">
         <span className="h-px w-10 bg-gold/60" />
         <span className="text-eyebrow text-gold/80 tracking-[0.28em]">
           Maharani Peta · Since the colonial era
         </span>
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10 pb-20 lg:pb-28 pt-32">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10 pb-20 lg:pb-28 pt-32">
         <div className="max-w-3xl">
           <motion.div
             className="mb-7 flex items-center gap-3"
@@ -145,7 +150,7 @@ export function Hero() {
 
       {/* Scroll cue */}
       <motion.div
-        className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 lg:flex flex-col items-center gap-2 text-cream/60"
+        className="pointer-events-none absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 lg:flex flex-col items-center gap-2 text-cream/60"
         initial={reduce ? undefined : { opacity: 0 }}
         animate={reduce ? undefined : { opacity: 1 }}
         transition={{ duration: 1, delay: 1.4 }}

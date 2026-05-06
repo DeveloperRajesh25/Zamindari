@@ -3,6 +3,7 @@ import { Fraunces, Inter, Cormorant_Garamond } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -105,11 +106,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${inter.variable} ${cormorant.variable}`}
     >
       <body>
-        <Navbar />
-        <main id="main">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
+        <SmoothScroll>
+          <Navbar />
+          <main id="main">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+        </SmoothScroll>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
