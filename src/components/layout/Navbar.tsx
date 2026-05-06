@@ -44,7 +44,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
         solid
-          ? "bg-cream/95 backdrop-blur border-b border-line"
+          ? "bg-cream/95 backdrop-blur border-b border-black/20"
           : "bg-transparent border-b border-transparent",
       )}
     >

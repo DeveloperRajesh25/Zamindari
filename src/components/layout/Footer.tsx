@@ -6,17 +6,17 @@ import { Divider } from "@/components/ui/Divider";
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-cream/90">
+    <footer className="bg-charcoal text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Link href="/" className="flex items-center gap-3 text-cream">
+            <Link href="/" className="flex items-center gap-3 text-white">
               <span className="text-gold">
                 <ElephantMark size={26} />
               </span>
               <span className="font-display text-2xl">Zamindari</span>
             </Link>
-            <p className="mt-5 font-accent italic text-cream/85 text-lg leading-relaxed max-w-sm">
+            <p className="mt-5 font-accent italic text-white/85 text-lg leading-relaxed max-w-sm">
               Where Heritage Meets the Table.
               <br />
               Authentic Andhra cuisine, served inside a colonial bungalow.
@@ -37,7 +37,7 @@ export function Footer() {
             <ul className="space-y-3">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-cream/90 hover:text-gold transition-colors">
+                  <Link href={l.href} className="text-white/90 hover:text-gold transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/reservations"
-                  className="text-cream/90 hover:text-gold transition-colors"
+                  className="text-white/90 hover:text-gold transition-colors"
                 >
                   Reservations
                 </Link>
@@ -55,7 +55,7 @@ export function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-eyebrow text-gold mb-5">Visit Us</h3>
-            <address className="not-italic text-cream/90 leading-relaxed">
+            <address className="not-italic text-white/90 leading-relaxed">
               {site.address.street}
               <br />
               {site.address.locality}
@@ -64,11 +64,11 @@ export function Footer() {
             </address>
             <a
               href={site.phoneHref}
-              className="mt-4 inline-flex items-center gap-2 text-cream hover:text-gold transition-colors"
+              className="mt-4 inline-flex items-center gap-2 text-white hover:text-gold transition-colors"
             >
               <Phone size={14} /> {site.phone}
             </a>
-            <div className="mt-5 text-sm text-cream/85">
+            <div className="mt-5 text-sm text-white/85">
               <div className="text-eyebrow text-gold mb-2">Hours</div>
               <div>All days · 12:00 PM – 11:30 PM</div>
             </div>
@@ -87,7 +87,7 @@ export function Footer() {
                 href={site.whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md border border-cream/30 px-5 py-3 text-center text-cream hover:border-gold hover:text-gold transition-colors"
+                className="rounded-md border border-white/30 px-5 py-3 text-center text-white hover:border-gold hover:text-gold transition-colors"
               >
                 Order Online
               </a>
@@ -96,7 +96,7 @@ export function Footer() {
         </div>
 
         <Divider tone="gold" className="mt-16 mb-6 opacity-40" />
-        <p className="text-sm text-cream/70 font-body">
+        <p className="text-sm text-white/75 font-body">
           © {new Date().getFullYear()} Zamindari Restaurant · Crafted with care in
           Visakhapatnam
         </p>

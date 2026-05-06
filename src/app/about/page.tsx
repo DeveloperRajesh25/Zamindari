@@ -54,10 +54,10 @@ export default function AboutPage() {
             priority
             sizes="100vw"
             className="absolute inset-0"
-            imgClassName="object-cover"
+            imgClassName="object-cover opacity-20"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-burgundy/85 via-burgundy/40 to-charcoal/30"
+            className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"
             aria-hidden
           />
         </div>
